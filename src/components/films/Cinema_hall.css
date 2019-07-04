@@ -1,12 +1,13 @@
-
-
+.cinema_hall {
+    margin-top: 20px;
+}
 .section {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
-.section .row {
-    margin-bottom: 0;
-}
+/*.section .row {*/
+/*    margin-bottom: 0;*/
+/*}*/
 
 .cinema_hall .section {
     display: flex;
@@ -14,98 +15,50 @@
 
 }
 
-.place {
-    width: 15px;
-    height: 15px;
-    background: deepskyblue;
+h3.film_title {
+    color: #000000;
+    font-weight: bold;
+}
+.cinema_place  {
+    border-top: 1px solid #6C9CE2;
+    border-bottom: 1px solid #6C9CE2;
+}
+.cinema_place_item {
+    border-bottom: 1px solid #6C9CE2;
+}
+.cinema_footer {
+    /*border-top: 1px solid #6C9CE2;*/
+}
+
+/*********места в зале***************/
+.cinema_place_item > img {
+
+}
+.place_item {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 10px;
+    background-color: #6C9CE2;
     margin: 10px;
     cursor: pointer;
 }
-.place:hover {
-    background: darkgreen;
-}
-
-.hall-legend {
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
-    line-height: 20px;
-    flex-wrap: wrap;
-    padding: 8px;
-}
-
-.hall-legend__color {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 6px 0 0;
-    border-radius: 3px;
-    background-color: #a4ce36;
-}
-
-.hall-legend__color--disabled {
-    border-radius: 50%;
-    background-color: #a2a5b4;
-}
-.hall-legend__item+.hall-legend__item {
-    margin-left: 16px;
-}
-.footer {
-    flex-shrink: 5;
-    display: flex;
-}
-.footer-col {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 6px 16px;
-}
-.hall-schema__sum {
-    font-size: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding-right: 24px;
-}
-.hall-schema__sum-final {
-    display: flex;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    font-weight: 500;
-    line-height: 24px;
-}
-
-.content--hall {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    /*position: relative;*/
-    padding: 20px;
-    overflow: auto;
-    background-color: #f5f7f8;
-    max-width: 100%;
-    border: 1px solid red;
-}
-.hall-schema-seats-container:nth-child(2n){
-    border: 2px solid green;
-}
-.hall-schema-seats-container {
-    height: 50px;
+.place_item.close_place {
     width: 50px;
-    border: 2px solid #000;
-    background-color: #808080;
-    border-radius: 100%;
-    margin: 20px;
-    text-align: center;
+    height: 50px;
+    background-color: #e23824;
+    margin: 10px;
+
+}
+.place_item.close_place:hover {
+
+}
+.place_item:hover {
+    /*background-color: #09203F;*/
 }
 
-.hall-schema-seats-container:hover {
-    cursor: pointer;
-   }
+/*******************************************/
 
-.hall {
-    
-    background-color:#e91e1e;
-}
+
+
