@@ -1,0 +1,12 @@
+.card_img {
+
+}
+a .card_title {
+    all: initial;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+}
+a .card-title.card_title:hover {
+    color: red;
+}

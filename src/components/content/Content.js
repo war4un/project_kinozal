@@ -10,7 +10,7 @@ class Content extends Component {
         //console.log(this.props);
         const { films } = this.props;
         return(
-            <Row className="justify-content-between align-items-start pt-2 pb-2">
+            <Row className="pt-2 pb-2">
                 <FilmsList films={films}/>
             </Row>
         )
