@@ -2,12 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import { NavLink } from 'react-router-dom'
-import { Redirect } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 
 const FilmsDetails = (props) => {
-  const { film, auth } = props;
+
+  const { film, auth, id } = props;
+  const link = auth.uid ?  <li><Link to={'/hallo/' + id} >1400</Link></li>  : <li><Link to='/signin'>1400</Link></li>
   if (film) {
     return (
         <div className="container section">
@@ -31,7 +32,7 @@ const FilmsDetails = (props) => {
                     <div className="row">
                         <div className="col s2">
                           <p className="waves-effect waves-light btn">
-                            <li><NavLink to='/hallo'>1400</NavLink></li>
+                            {link}
                           </p>
                         </div>
                         <div className="col s2">
@@ -67,7 +68,10 @@ const mapStateToProps = (state, ownProps) => {
   const films = state.firestore.data.film;
   const film = films ? films[id] : null
   return {
-    film: film
+    film: film,
+    id: id,
+    auth: state.firebase.auth,
+    authError: state.auth.authError
   }
 }
 

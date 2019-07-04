@@ -18,7 +18,6 @@ class Content extends Component {
 }
 
 const mapStateToProps = (state) => {
-    //console.log(state);
     return {
         films: state.firestore.ordered.film
     }

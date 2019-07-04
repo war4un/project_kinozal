@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
 import Place_hall from './Place_hall'
 import {Row, Col, Button} from 'reactstrap';
 import './Cinema_hall.css'
 import {Link, NavLink} from "react-router-dom";
-import classnames from "classnames";
 
-const myFilm = {
+/*const myFilm = {
     films: [
         {
             id: '1',
@@ -18,9 +20,9 @@ const myFilm = {
             age: '18+'
         },
     ]
-};
+};*/
 
-const state = {
+const stateFilm = {
     time: '1 июля в 16:00',
     hall: 'Зал DOLBY ATMOS',
     place: {
@@ -57,35 +59,39 @@ const state = {
 };
 
 
+
 class HallDA extends Component {
+    constructor(props) {
+        super(props);
+      }
     choiceOfPlaces = (id_row, id_place) => {
-        const arr = state.base;
-        const sum = state;
-        const {number_place} = state.place;
+        const arr = stateFilm.base;
+        const sum = stateFilm;
+        const {number_place} = stateFilm.place;
         const id = `${id_row}_${id_place}`;
         if (arr[id_row][id_place]['status'] !== 'close_place') {
             arr[id_row][id_place]['status'] = 'close_place';
-            sum.sum += state.place.price;
+            sum.sum += stateFilm.place.price;
             number_place[id] = arr[id_row][id_place];
         } else {
             arr[id_row][id_place]['status'] = 'open';
-            sum.sum -= state.place.price;
+            sum.sum -= stateFilm.place.price;
             delete number_place[id];
         }
 
         this.setState({
-            ...state,
+            ...stateFilm,
             place: {
-                ...state,
+                ...stateFilm,
                 number_place,
             },
             sum: sum,
             base: arr,
         });
-        console.log(state);
     };
+
     booked = () => {
-        const ticket = state.place.number_place;
+        const ticket = stateFilm.place.number_place;
         return (
             <div>
                 {ticket && Object.keys(ticket).map((id) =>
@@ -99,11 +105,8 @@ class HallDA extends Component {
     }
 
     render() {
-        const [film] = myFilm.films;
-        const {base, sum, place} = state;
-
-
-        console.log(film);
+        const {film} = this.props;
+        const {base, sum, place} = stateFilm;
         return (
             <Col>
                 <div className="cinema_hall">
@@ -112,7 +115,7 @@ class HallDA extends Component {
                             <Row>
                                 <Col xs="10">
                                     <h3 className="film_title">
-                                        {film.title}
+                                    {film.title}
                                     </h3>
                                 </Col>
                                 <Col xs="2">
@@ -132,8 +135,8 @@ class HallDA extends Component {
                             </Row>
                         </Col>
                         <Col xs="12">
-                            <h4>{state.time},&nbsp;</h4>
-                            <h4>{state.hall}</h4>
+                            <h4>{stateFilm.time},&nbsp;</h4>
+                            <h4>{stateFilm.hall}</h4>
                         </Col>
                     </Row>
                     <Row className="cinema_place">
@@ -142,7 +145,7 @@ class HallDA extends Component {
                                 <div className="hall-legend__item">
 													<span className="hall-legend__color">
 													</span>
-                                    <span>{state.place.price}р</span>
+                                    <span>{stateFilm.place.price}р</span>
                                 </div>
                                 <div className="hall-legend__item">
                                                     <span className="hall-legend__color hall-legend__color--disabled">
@@ -192,6 +195,19 @@ export const SUM = ({sum}) => {
     )
 };
 
-export default HallDA
+
+  
+ 
+const mapStateToProps = (state) => {
+    return {
+        films: state.firestore.ordered.film
+    }
+}
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'film'}
+    ])
+)(HallDA)
 
 

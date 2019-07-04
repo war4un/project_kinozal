@@ -5,7 +5,7 @@ import SignedOutLinks from './SignedOutLinks'
 import {connect} from 'react-redux'
 import cinema_logo from '../../img/cinema-logo.png'
 import './NavBar.css'
-import {Container, Row, Col, CardImg} from 'reactstrap';
+import {Container, Row, Col} from 'reactstrap';
 
 class Navbar extends Component {
 
