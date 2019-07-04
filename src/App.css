@@ -1,9 +1,34 @@
-.wrapper{
-   display: flex;
+.branding {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
 }
-.wrapper div{
-    border: 1px solid red;
-    margin-left: 50px;
-    justify-content: center;
-    
+
+.App .card-img-overlay {
+    padding-top: 270px;
+}
+
+.wrapper {
+    max-width: 1240px;
+    min-height: 50vh;
+    margin: 20px auto;
+    background-color: #ccdeff;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+    border-radius: 10px;
+}
+
+@media ( max-width: 1350px ) {
+    .branding {
+        display: none;
+    }
+
+    .App .card-img-overlay {
+        padding-top: 20px;
+    }
 }
