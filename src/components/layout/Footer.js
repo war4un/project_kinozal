@@ -1,8 +1,6 @@
 import React from 'react';
 import {Col, Row, Container} from 'reactstrap'
 import './Footer.css'
-import facebook from '../../img/icons8-facebook-48.png'
-import vk from '../../img/icons8-vk-circled-48.png'
 
 import cinema_logo from '../../img/cinema-logo.png'
 
