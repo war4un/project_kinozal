@@ -16,7 +16,7 @@
 .wrapper {
     max-width: 1240px;
     min-height: 50vh;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: #ccdeff;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, .15);
     box-shadow: 0 0 15px rgba(0, 0, 0, .15);

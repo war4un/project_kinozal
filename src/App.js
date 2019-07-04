@@ -15,6 +15,7 @@ import './App.css'
 import Footer from "./components/layout/Footer";
 
 class App extends React.Component {
+
     render() {
         return (
             <BrowserRouter>
@@ -36,6 +37,7 @@ class App extends React.Component {
                                         <Route path='/create' component={CreateFilms}/>
                                         <Route path='/hallo' component={HalloDA}/>
                                         <Route path='/faq' component={FAQ}/>
+                                        <Route path='/ticket' component={Ticket}/>
                                     </Switch>
                                 </Container>
                             </div>
