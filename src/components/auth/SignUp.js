@@ -17,7 +17,7 @@ class SignUp extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.signIn(this.state)
+    this.props.signUp(this.state)
   }
     render() {
       const { auth, authError } = this.props;
