@@ -1,0 +1,15 @@
+.footer {
+    background-color: #6C9CE2;
+    border-radius: 0 0 10px 10px;
+}
+.footer_img {
+    height: 100px;
+}
+.footer_img img {
+    height: 100px;
+}
+.address {
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}

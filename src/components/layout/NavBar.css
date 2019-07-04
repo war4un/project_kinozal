@@ -3,25 +3,31 @@
     border-radius: 10px 10px 0 0;
     /*height: 50px;*/
 }
-.header_name {
-    margin: auto;
-}
-.row {
-    /*margin-bottom: 0;*/
-}
 
-img.card-img-top {
-    width: 60%;
-    border: 0;
-}
-
-a h5,h4,h3,h6 {
+.heder_title {
+    font-size: 32px;
+    color: white;
     font-style: italic;
+    font-weight: bold;
 }
-a h4,h3,h5,h6 {
-    color: #ffffff;
-    text-decoration: none;
+.heder_title:hover {
+    color: #000000;
 }
-a h3:focus {
-    text-decoration: none;
+
+.header_title {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+.header_title:hover {
+    color: #000000;
+
+}
+.nav_bar ul {
+    display: flex;
+    justify-content: flex-end;
+}
+.nav_bar ul li {
+    display: flex;
+    justify-content: flex-end;
 }
